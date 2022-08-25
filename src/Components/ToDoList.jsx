@@ -1,16 +1,10 @@
 import React from 'react'
+import { liStyle, ulStyle } from './Styles'
 
 export default function ToDoList({list}) {
   return (
-    <div>
-        {list.length === 0 ? 'No hay tareas' : showList(list)}
-        {/* {console.log(list)} */}
-    </div>
+    <ul style={ulStyle}>
+        {list.length === 0 ? <li style={liStyle}>No hay tareas</li> : list.map((el, index) => <li key={index} style={liStyle} >Tarea: {el.item.value}</li>)}
+    </ul>
   )
-}
-
-function showList(list) {
-    list.map((el, index) => (
-        <h2 key={index}>Tarea: {el.item.value}</h2>
-    ))
 }

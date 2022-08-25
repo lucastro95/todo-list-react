@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import MyButton from "./Button";
-import { divStyle, inputStyle } from "./Styles";
+import { buttonStyle, divStyle, inputStyle, formStyle } from "./Styles";
 import ToDoList from "./ToDoList";
 
 function MyFormContainer () {
@@ -10,40 +8,32 @@ function MyFormContainer () {
     const [item, setItem] = useState({value: ''})
 
     function handleChange(e) {
+        e.preventDefault()
         setItem({value: e.target.value})
     }
 
     function handleSubmit(e) {
         e.preventDefault()
         setTodos([...todos, {item}])
+        setItem({value: ''})
     }
 
-    const FormContainer = styled.form`
-    margin: auto;
-    margin-top: 3em;
-    width: 40%;
-    height: auto;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: blueviolet;
-    border-radius: .5em;
-    `
+    function handleErrase(e) {
+        e.preventDefault()
+        setTodos(initialState)
+    }
 
     return (
-        <FormContainer onSubmit={handleSubmit}>
+        <form style={formStyle} onSubmit={handleSubmit}>
             <input type={'text'} style={inputStyle} name='search' value={item.value} onChange={handleChange} />
-            <p>{item.value}</p>
             <div style={divStyle}>
-                <MyButton message="Añadir" type='submit' />
-                <MyButton message="Borrar"/>
+                <button style={buttonStyle} type='submit'>Enviar</button>
+                <button style={buttonStyle} onClick={handleErrase}>Borrar</button>
             </div>
             <div>
                 <ToDoList list={todos}/>
             </div>
-        </FormContainer> 
+        </form> 
     )
 
 }
