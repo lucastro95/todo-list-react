@@ -1,9 +1,11 @@
-import Form from "./Components/Form";
+import Navbar from "./Components/components/Navbar/Navbar";
+import Routes from "./routes/Routes";
 
 function App() {
   return (
     <>
-      <Form />
+    <Navbar />
+    <Routes />
     </>
   );
 }
