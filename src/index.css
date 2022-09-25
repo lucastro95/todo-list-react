@@ -5,7 +5,50 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    background-color: #e7ebc5;
+}
+
 a {
     text-decoration: none;
     color: #dedede;
+    transition: .2s all;
+}
+
+a:hover {
+    color: #6f5060;
+    cursor: pointer;
+}
+
+input[type='text'],
+input[type='textarea'] {
+    margin: .8rem 0;
+    background-color: transparent;
+    padding: .3rem 0;
+    border: none;
+    border-bottom: 2px solid #e7ebc5;
+    outline: none;
+    color: #e7ebc5;
+}
+
+input::placeholder {
+    color: #e7ebc5b9;
+}
+
+button,
+input[type='submit'],
+input[type='reset'] {
+    border: 2px solid #e7ebc5;
+    background-color: transparent;
+    color: #e7ebc5;
+    padding: .5rem 1rem;
+    transition: .2s all;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover {
+    border: 2px solid #989788;
+    color: #989788;
+    cursor: pointer;
 }

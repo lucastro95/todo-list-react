@@ -4,7 +4,7 @@ import { NavbarLinksWrapper } from './NavbarLinksStyle';
 const NavbarLinks = () => {
     return (
         <NavbarLinksWrapper>
-            <NavLink to="/">Inicio</NavLink>
+            <NavLink to="/">To-Do List</NavLink>
             <NavLink to="/PokeAPI">PokeAPI</NavLink>
         </NavbarLinksWrapper>
     )
