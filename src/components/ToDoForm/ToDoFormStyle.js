@@ -11,4 +11,12 @@ align-items: center;
 justify-content: space-between;
 padding: 2rem;
 color: #e7ebc5;
+
+@media (max-width: 786px) {
+    flex-direction: column;
+    width: 80%;
+    margin: 0;
+    margin-top: 5rem;
+    height: auto;
+}
 `
